@@ -1,0 +1,43 @@
+{% extends 'entidades/base.html' %}
+
+{% block title %}Mascotas - Guardería{% endblock %}
+
+{% block content %}
+<section class="page-section" id="mascotas">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Nuestras Mascotas</h2>
+            <h3 class="section-subheading text-muted">Listado de todas las mascotas registradas</h3>
+        </div>
+        
+        <div class="text-center mb-4">
+            <a href="{% url 'mascota_create' %}" class="btn btn-primary btn-xl text-uppercase">+ Agregar Mascota</a>
+        </div>
+
+        {% if mascotas %}
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Edad</th>
+                        <th>Tipo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for mascota in mascotas %}
+                    <tr>
+                        <td>{{ mascota.nombre }}</td>
+                        <td>{{ mascota.edad }}</td>
+                        <td>{{ mascota.tipo }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <p class="text-center text-muted">No hay mascotas registradas aún.</p>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

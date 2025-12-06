@@ -1,0 +1,43 @@
+{% extends 'entidades/base.html' %}
+
+{% block title %}Citas - Guardería{% endblock %}
+
+{% block content %}
+<section class="page-section bg-light" id="citas">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Citas Agendadas</h2>
+            <h3 class="section-subheading text-muted">Listado de todas las citas registradas</h3>
+        </div>
+        
+        <div class="text-center mb-4">
+            <a href="{% url 'cita_create' %}" class="btn btn-primary btn-xl text-uppercase">+ Agendar Cita</a>
+        </div>
+
+        {% if citas %}
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Mascota</th>
+                        <th>Servicio</th>
+                        <th>Fecha y Hora</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for cita in citas %}
+                    <tr>
+                        <td>{{ cita.mascota.nombre }}</td>
+                        <td>{{ cita.servicio.nombre_servicio }}</td>
+                        <td>{{ cita.fecha_hora }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <p class="text-center text-muted">No hay citas registradas aún.</p>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'entidades/base.html' %}
+
+{% block title %}Buscar Mascotas - Guardería{% endblock %}
+
+{% block content %}
+<section class="page-section">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-heading text-uppercase">Buscar Mascota</h2>
+            <h3 class="section-subheading text-muted">Encuentra a tu mascota</h3>
+        </div>
+
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8">
+                <form method="get" class="input-group input-group-lg">
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        name="q" 
+                        placeholder="Buscar por nombre..." 
+                        value="{{ query }}"
+                    >
+                    <button class="btn btn-primary" type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+
+        {% if query %}
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                {% if resultados %}
+                <h4 class="mb-4">Resultados para "{{ query }}":</h4>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Edad</th>
+                                <th>Tipo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for mascota in resultados %}
+                            <tr>
+                                <td>{{ mascota.nombre }}</td>
+                                <td>{{ mascota.edad }}</td>
+                                <td>{{ mascota.tipo }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% else %}
+                <p class="text-center text-muted">No se encontraron mascotas con ese nombre.</p>
+                {% endif %}
+            </div>
+        </div>
+        {% else %}
+        <p class="text-center text-muted">Ingresa un nombre de mascota para buscar.</p>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

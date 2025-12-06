@@ -1,0 +1,79 @@
+{% extends 'entidades/base.html' %}
+
+{% block title %}Inicio - Guardería de Mascotas{% endblock %}
+
+{% block content %}
+<!-- Masthead-->
+<header class="masthead" style="background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=1200&h=600&fit=crop'); background-size: cover; background-position: center;">
+    <div class="container">
+        <div class="masthead-subheading">¡Bienvenido a nuestra guardería!</div>
+        <div class="masthead-heading text-uppercase">Cuidamos de tus mascotas</div>
+        <a class="btn btn-primary btn-xl text-uppercase" href="#servicios">Conocer nuestros servicios</a>
+    </div>
+</header>
+
+<!-- Servicios-->
+<section class="page-section" id="servicios">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Nuestros Servicios</h2>
+            <h3 class="section-subheading text-muted">Contamos con diversos servicios para tus mascotas</h3>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <span class="fa-stack fa-4x">
+                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fas fa-heart fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="my-3">Cuidado Diario</h4>
+                <p class="text-muted">Cuidado completo y atención veterinaria durante el día para tus mascotas.</p>
+            </div>
+            <div class="col-md-4">
+                <span class="fa-stack fa-4x">
+                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fas fa-bath fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="my-3">Baños y Aseo</h4>
+                <p class="text-muted">Servicios de baño, peluquería y aseo profesional para tus mascotas.</p>
+            </div>
+            <div class="col-md-4">
+                <span class="fa-stack fa-4x">
+                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fas fa-stethoscope fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="my-3">Consultas Veterinarias</h4>
+                <p class="text-muted">Consultas y atención veterinaria profesional disponible todos los días.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sobre nosotros-->
+<section class="page-section bg-light" id="about">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Sobre Nosotros</h2>
+            <h3 class="section-subheading text-muted">Somos especialistas en el cuidado de mascotas</h3>
+        </div>
+        <p class="text-center text-muted large">En nuestra guardería ofrecemos un ambiente seguro y acogedor para tus mascotas. Contamos con personal capacitado y veterinarios profesionales dispuestos a brindar el mejor servicio.</p>
+    </div>
+</section>
+
+<!-- Contacto-->
+<section class="page-section" id="contacto">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Contacto</h2>
+            <h3 class="section-subheading text-muted">¿Preguntas? ¡Contáctanos!</h3>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <p class="text-center text-muted large">Teléfono: +598 123 456 789</p>
+                <p class="text-center text-muted large">Email: info@guarderiamascotas.com</p>
+                <p class="text-center text-muted large">Horario: Lunes a Viernes 9:00 AM - 6:00 PM</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

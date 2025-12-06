@@ -1,0 +1,64 @@
+{% extends 'entidades/base.html' %}
+
+{% block title %}{{ title }} - Guardería{% endblock %}
+
+{% block content %}
+<section class="page-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="text-center mb-5">
+                    <h2 class="section-heading text-uppercase">{{ title }}</h2>
+                </div>
+
+                <form method="post" class="needs-validation">
+                    {% csrf_token %}
+                    
+                    <div class="mb-3">
+                        <label for="{{ form.nombre_servicio.id_for_label }}" class="form-label">{{ form.nombre_servicio.label }}</label>
+                        {{ form.nombre_servicio }}
+                        {% if form.nombre_servicio.errors %}
+                            <div class="alert alert-danger mt-2">{{ form.nombre_servicio.errors }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="{{ form.descripcion.id_for_label }}" class="form-label">{{ form.descripcion.label }}</label>
+                        {{ form.descripcion }}
+                        {% if form.descripcion.errors %}
+                            <div class="alert alert-danger mt-2">{{ form.descripcion.errors }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="{{ form.precio.id_for_label }}" class="form-label">{{ form.precio.label }}</label>
+                        {{ form.precio }}
+                        {% if form.precio.errors %}
+                            <div class="alert alert-danger mt-2">{{ form.precio.errors }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary btn-xl text-uppercase">Guardar</button>
+                        <a href="{% url 'servicios_list' %}" class="btn btn-secondary btn-xl text-uppercase">Cancelar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    input[type="text"],
+    input[type="number"],
+    textarea,
+    select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+</style>
+{% endblock %}
