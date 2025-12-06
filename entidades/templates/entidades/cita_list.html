@@ -22,6 +22,7 @@
                         <th>Mascota</th>
                         <th>Servicio</th>
                         <th>Fecha y Hora</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,6 +31,10 @@
                         <td>{{ cita.mascota.nombre }}</td>
                         <td>{{ cita.servicio.nombre_servicio }}</td>
                         <td>{{ cita.fecha_hora }}</td>
+                        <td>
+                            <a href="{% url 'cita_edit' cita.pk %}" class="btn btn-warning btn-sm">Editar</a>
+                            <a href="{% url 'cita_delete' cita.pk %}" class="btn btn-danger btn-sm">Eliminar</a>
+                        </td>
                     </tr>
                     {% endfor %}
                 </tbody>

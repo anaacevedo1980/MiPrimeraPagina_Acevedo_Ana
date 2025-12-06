@@ -1,0 +1,30 @@
+{% extends 'entidades/base.html' %}
+
+{% block title %}Eliminar Servicio - Guardería{% endblock %}
+
+{% block content %}
+<section class="page-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="text-center mb-5">
+                    <h2 class="section-heading text-uppercase">Eliminar Servicio</h2>
+                </div>
+
+                <div class="alert alert-danger" role="alert">
+                    <h4 class="alert-heading">¿Estás seguro?</h4>
+                    <p>¿Realmente deseas eliminar el servicio <strong>{{ objeto.nombre_servicio }}</strong>?</p>
+                    <hr>
+                    <p class="mb-0">Esta acción no se puede deshacer.</p>
+                </div>
+
+                <form method="post" class="text-center">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger btn-xl text-uppercase">Sí, Eliminar</button>
+                    <a href="{% url 'servicios_list' %}" class="btn btn-secondary btn-xl text-uppercase">Cancelar</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

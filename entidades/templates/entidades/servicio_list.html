@@ -22,6 +22,7 @@
                         <th>Nombre del Servicio</th>
                         <th>Descripción</th>
                         <th>Precio</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,6 +31,10 @@
                         <td>{{ servicio.nombre_servicio }}</td>
                         <td>{{ servicio.descripcion }}</td>
                         <td>${{ servicio.precio }}</td>
+                        <td>
+                            <a href="{% url 'servicio_edit' servicio.pk %}" class="btn btn-warning btn-sm">Editar</a>
+                            <a href="{% url 'servicio_delete' servicio.pk %}" class="btn btn-danger btn-sm">Eliminar</a>
+                        </td>
                     </tr>
                     {% endfor %}
                 </tbody>
