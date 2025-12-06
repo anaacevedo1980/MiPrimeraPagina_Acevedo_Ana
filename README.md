@@ -23,7 +23,7 @@ Una aplicación web en Django para gestionar una guardería de mascotas con here
 1. **Clonar el repositorio**
 ```bash
    git https://github.com/anaacevedo1980/MiPrimeraPagina_Acevedo_Ana.git
-   cd MuPrimeraPagina_Acevedo_Ana
+   cd MiPrimeraPagina_Acevedo_Ana
 ```
 
 2. **Instalar dependencias**
