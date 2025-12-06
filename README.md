@@ -76,6 +76,21 @@ Una aplicación web en Django para gestionar una guardería de mascotas con here
 3. Selecciona mascota, servicio y fecha/hora
 4. Verás el listado de citas
 
+### Editar y Eliminar Registros
+En todas las listas (Mascotas, Servicios, Clientes, Citas) encontrarás dos botones por cada registro:
+
+- **Botón Editar (amarillo)**: Permite modificar los datos del registro
+  - Haz clic en "Editar"
+  - Modifica los campos que desees
+  - Haz clic en "Guardar"
+
+- **Botón Eliminar (rojo)**: Elimina el registro
+  - Haz clic en "Eliminar"
+  - Se abrirá una página de confirmación
+  - Haz clic en "Sí, Eliminar" para confirmar
+  - El registro será eliminado permanentemente
+
+
 ### Buscar Mascotas
 1. Ve a `http://localhost:8000/buscar/`
 2. Ingresa el nombre de la mascota
