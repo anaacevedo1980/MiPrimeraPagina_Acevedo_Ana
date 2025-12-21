@@ -62,8 +62,8 @@ Una aplicación web completa en Django para gestionar una guardería de mascotas
 
 1. **Clonar el repositorio**
 ```bash
-   git clone https://github.com/TU_USUARIO/TuPrimeraPagina+Acevedo.git
-   cd TuPrimeraPagina+Acevedo
+   git clone https://github.com/Mi_USUARIO/TuPrimeraPagina+Acevedo.git
+   cd MiPrimeraPagina+Acevedo
 ```
 
 2. **Instalar dependencias**
@@ -81,9 +81,9 @@ Una aplicación web completa en Django para gestionar una guardería de mascotas
    python manage.py createsuperuser
 ```
    Ingresa:
-   - Username: (ej: admin)
-   - Email: (ej: admin@example.com)
-   - Password: (contraseña segura)
+   - Username:  admin
+   - Email: anaacevedo@gmail.com
+   - Password: Feli10
 
 5. **Ejecutar el servidor**
 ```bash
