@@ -2,7 +2,7 @@
 
 Una aplicación web completa en Django para gestionar una guardería de mascotas con sistema de autenticación, roles de usuario y CRUD completo de mascotas, servicios, clientes y citas.
 
-## 🎥 Video Demostrativo
+##  Video Demostrativo
 
 Mira el video de demostración de la aplicación.
 
