@@ -2,6 +2,13 @@
 
 Una aplicación web completa en Django para gestionar una guardería de mascotas con sistema de autenticación, roles de usuario y CRUD completo de mascotas, servicios, clientes y citas.
 
+## 🎥 Video Demostrativo
+
+Mira el video de demostración de la aplicación.
+
+[**Ver Video en Loom**] https://www.loom.com/share/b311a36bcf4e4eb9a7d3c821659a07c6
+
+
 ## Características Principales
 
 ###  Sistema de Autenticación
