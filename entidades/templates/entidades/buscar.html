@@ -12,51 +12,50 @@
 
         <div class="row justify-content-center mb-5">
             <div class="col-lg-8">
-                <form method="get" class="input-group input-group-lg">
-                    <input 
-                        type="text" 
-                        class="form-control" 
-                        name="q" 
-                        placeholder="Buscar por nombre..." 
-                        value="{{ query }}"
-                    >
-                    <button class="btn btn-primary" type="submit">Buscar</button>
+                <form method="get" class="d-flex gap-2">
+                    <input type="text" name="q" value="{{ query }}" placeholder="Buscar por nombre..." class="form-control">
+                    <button type="submit" class="btn btn-primary btn-lg text-uppercase">Buscar</button>
                 </form>
             </div>
         </div>
 
         {% if query %}
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                {% if resultados %}
+            {% if resultados %}
                 <h4 class="mb-4">Resultados para "{{ query }}":</h4>
+                
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
                             <tr>
                                 <th>Nombre</th>
+                                <th>Raza</th>
                                 <th>Edad</th>
                                 <th>Tipo</th>
+                                <th>Cliente</th>
+                                <th>Teléfono</th>
+                                <th>Observaciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             {% for mascota in resultados %}
                             <tr>
                                 <td>{{ mascota.nombre }}</td>
+                                <td>{{ mascota.raza }}</td>
                                 <td>{{ mascota.edad }}</td>
                                 <td>{{ mascota.tipo }}</td>
+                                <td>{{ mascota.cliente.nombre_cliente }}</td>
+                                <td>{{ mascota.telefono_contacto }}</td>
+                                <td>{{ mascota.observaciones }}</td>
                             </tr>
                             {% endfor %}
                         </tbody>
                     </table>
                 </div>
-                {% else %}
-                <p class="text-center text-muted">No se encontraron mascotas con ese nombre.</p>
-                {% endif %}
-            </div>
-        </div>
-        {% else %}
-        <p class="text-center text-muted">Ingresa un nombre de mascota para buscar.</p>
+            {% else %}
+                <div class="alert alert-info text-center">
+                    No se encontraron mascotas con el nombre "{{ query }}"
+                </div>
+            {% endif %}
         {% endif %}
     </div>
 </section>

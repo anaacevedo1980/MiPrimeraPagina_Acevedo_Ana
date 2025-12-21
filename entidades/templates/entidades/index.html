@@ -1,5 +1,28 @@
 {% extends 'entidades/base.html' %}
 
+{% load static %}
+
+{% block extra_css %}
+<style>
+    body {
+        padding-top: 0;
+    }
+    
+    #mainNav {
+        background-color: transparent !important;
+        box-shadow: none;
+    }
+    
+    #mainNav .navbar-nav .nav-link {
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
+    
+    #mainNav .navbar-nav .nav-link:hover {
+        color: #ffc107 !important;
+    }
+</style>
+{% endblock %}
+
 {% block title %}Inicio - Guardería de Mascotas{% endblock %}
 
 {% block content %}

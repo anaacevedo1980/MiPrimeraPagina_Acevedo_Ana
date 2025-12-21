@@ -10,8 +10,12 @@
             <h3 class="section-subheading text-muted">Listado de todos los servicios disponibles</h3>
         </div>
         
-        <div class="text-center mb-4">
-            <a href="{% url 'servicio_create' %}" class="btn btn-primary btn-xl text-uppercase">+ Agregar Servicio</a>
+       <div class="text-center mb-4">
+            {% if user.is_staff %}
+                <a href="{% url 'servicio_create' %}" class="btn btn-primary btn-xl text-uppercase">+ Agregar Servicio</a>
+            {% else %}
+                <button class="btn btn-primary btn-xl text-uppercase" disabled style="opacity: 0.5; cursor: not-allowed;">+ Agregar Servicio</button>
+            {% endif %}
         </div>
 
         {% if servicios %}
@@ -32,8 +36,13 @@
                         <td>{{ servicio.descripcion }}</td>
                         <td>${{ servicio.precio }}</td>
                         <td>
-                            <a href="{% url 'servicio_edit' servicio.pk %}" class="btn btn-warning btn-sm">Editar</a>
-                            <a href="{% url 'servicio_delete' servicio.pk %}" class="btn btn-danger btn-sm">Eliminar</a>
+                            {% if user.is_staff %}
+                                <a href="{% url 'servicio_edit' servicio.pk %}" class="btn btn-warning btn-sm">Editar</a>
+                                <a href="{% url 'servicio_delete' servicio.pk %}" class="btn btn-danger btn-sm">Eliminar</a>
+                            {% else %}
+                                <button class="btn btn-warning btn-sm" disabled style="opacity: 0.5; cursor: not-allowed;">Editar</button>
+                                <button class="btn btn-danger btn-sm" disabled style="opacity: 0.5; cursor: not-allowed;">Eliminar</button>
+                            {% endif %}
                         </td>
                     </tr>
                     {% endfor %}

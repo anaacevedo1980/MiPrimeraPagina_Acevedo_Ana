@@ -1,29 +1,28 @@
 {% extends 'entidades/base.html' %}
 
-{% block title %}Mascotas - Guardería{% endblock %}
+{% block title %}Mascotas de {{ cliente.nombre_cliente }} - Guardería{% endblock %}
 
 {% block content %}
-<section class="page-section" id="mascotas">
+<section class="page-section">
     <div class="container">
-        <div class="text-center">
-            <h2 class="section-heading text-uppercase">Nuestras Mascotas</h2>
-            <h3 class="section-subheading text-muted">Listado de todas las mascotas registradas</h3>
-        </div>
-        
-        <div class="text-center mb-4">
-            <a href="{% url 'mascota_create' %}" class="btn btn-primary btn-xl text-uppercase">+ Agregar Mascota</a>
+        <div class="text-center mb-5">
+            <h2 class="section-heading text-uppercase">Mascotas de {{ cliente.nombre_cliente }}</h2>
+            <h3 class="section-subheading text-muted">Cliente: {{ cliente.nombre_cliente }} | Email: {{ cliente.email }}</h3>
         </div>
 
-  {% if mascotas %}
+        <div class="text-center mb-4">
+            <a href="{% url 'clientes_list' %}" class="btn btn-secondary btn-lg text-uppercase">Volver a Clientes</a>
+        </div>
+
+        {% if mascotas %}
         <div class="table-responsive">
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Nombre Mascota</th>
+                        <th>Nombre</th>
                         <th>Raza</th>
                         <th>Edad</th>
                         <th>Tipo</th>
-                        <th>Cliente</th>
                         <th>Teléfono</th>
                         <th>Acciones</th>
                     </tr>
@@ -35,7 +34,6 @@
                         <td>{{ mascota.raza }}</td>
                         <td>{{ mascota.edad }}</td>
                         <td>{{ mascota.tipo }}</td>
-                        <td>{{ mascota.cliente.nombre_cliente }}</td>
                         <td>{{ mascota.telefono_contacto }}</td>
                         <td>
                             <a href="{% url 'mascota_edit' mascota.pk %}" class="btn btn-warning btn-sm">Editar</a>
@@ -47,7 +45,9 @@
             </table>
         </div>
         {% else %}
-        <p class="text-center text-muted">No hay mascotas registradas aún.</p>
+        <div class="alert alert-info text-center">
+            Este cliente no tiene mascotas registradas aún.
+        </div>
         {% endif %}
     </div>
 </section>

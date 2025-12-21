@@ -16,6 +16,45 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+        
+<style>
+            body {
+                padding-top: 80px;
+            }
+            
+            #mainNav {
+                background-color: #212529 !important;
+            }
+            
+              #mainNav .navbar-nav {
+                gap: 0.5rem;
+                margin-right: auto !important;
+                margin-left: 0 !important;
+            }
+            
+            #mainNav .navbar-nav .nav-link {
+                color: #ffffff !important;
+                font-weight: 600;
+                font-size: 0.9rem;
+                letter-spacing: 0.05em;
+                padding-right: 0.5rem !important;
+                padding-left: 0.5rem !important;
+            }
+            
+            #mainNav .navbar-nav .nav-link:hover {
+                color: #ffc107 !important;
+            }
+            
+            #mainNav .navbar-nav .nav-link.active {
+                color: #ffc107 !important;
+            }
+            
+            #mainNav .navbar-nav {
+                gap: 0.5rem;
+            }
+        </style>
+        
+        {% block extra_css %}{% endblock %}
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -33,6 +72,24 @@
                         <li class="nav-item"><a class="nav-link" href="{% url 'clientes_list' %}">Clientes</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'citas_list' %}">Citas</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'buscar_mascota' %}">Buscar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'acerca_de_mi' %}">Acerca de Mí</a></li>
+                        
+                        {% if user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'editar_perfil' %}">
+                                    {% if user.perfil.avatar %}
+                                        <img src="{{ user.perfil.avatar.url }}" alt="Avatar" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
+                                    {% else %}
+                                        <i class="fas fa-user-circle"></i>
+                                    {% endif %}
+                                    {{ user.username }}
+                                </a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Cerrar Sesión</a></li>
+                        {% else %}
+                            <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Iniciar Sesión</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'registro' %}">Registrarse</a></li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
