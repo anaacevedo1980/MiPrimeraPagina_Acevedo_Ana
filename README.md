@@ -62,7 +62,7 @@ Una aplicación web completa en Django para gestionar una guardería de mascotas
 
 1. **Clonar el repositorio**
 ```bash
-   git clone https://github.com/Mi_USUARIO/TuPrimeraPagina+Acevedo.git
+   git clone https://github.com/Mi_USUARIO/MiPrimeraPagina+Acevedo.git
    cd MiPrimeraPagina+Acevedo
 ```
 
