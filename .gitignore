@@ -1,0 +1,15 @@
+# Base de datos
+*.db
+db.sqlite3
+Servicios.db
+
+# Python
+__pycache__/
+*.pyc
+
+# Media
+/media/
+
+# IDE
+.vscode/
+.idea/
